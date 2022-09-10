@@ -15,88 +15,70 @@
             <img src="img/logo.png" alt="logo" id="logo-quiz-selection-page">
             <h1 id="headerh1">V 0.1 BETA</h1>
         </div>
-        <p id="message-quiz-selection-page"></p>
+        <div id="message-line">
+            <p id="message-quiz-selection-page"></p>
+            <div id="stopwatch">
+                00:00:00
+            </div>
+        </div>
         <div id="disapear">
             <div id="quizes-container1">
                 <div class="quizesChoices">
                     <h1>Python</h1>
-                    <button onclick="python() ">Join</button>
+                    <button onclick="tests('Python') ">Join</button>
                 </div>
                 <div class="quizesChoices">
                     <h1>Module-1 Exam</h1>
-                    <button>Join</button>
+                    <button onclick="tests('Module-1 Exam') ">Join</button>
                 </div>
                 <div class="quizesChoices">
                     <h1>CCO</h1>
-                    <button>Join</button>
+                    <button onclick="tests('CCO') ">Join</button>
                 </div>
             </div>
             <div id="quizes-container2">
                 <div class="quizesChoices">
                     <h1>Web and App Crash Course</h1>
-                    <button>Join</button>
+                    <button onclick="tests('Web and App Crash Course') ">Join</button>
                 </div>
                 <div class="quizesChoices">
                     <h1>Web & App Development(Madaris)</h1>
-                    <button>Join</button>
+                    <button onclick="tests('Web & App Development(Madaris)') "> Join</button>
                 </div>
                 <div class="quizesChoices">
                     <h1>Web And Mobile Hybrid App Develpment</h1>
-                    <button>Join</button>
+                    <button onclick="tests('Web And Mobile Hybrid App Develpment') ">Join</button>
                 </div>
             </div>
         </div>
         <div id="appear">
-            <h1 id="QuizCategories"></h1>
-            <h2 id="quizQuetions"></h2>
-            <!-- <button id="StrtQuiz">Next</button> -->
+            <h1 id="QuizCategories">Python</h1>
+            <h2 id="quizQuetions">Quetions 1 out of 4</h2>
         </div>
 
         <div class="maincontainer" id="python1">
             <div class="qutionContainer">
-                <h1 class="quetions">Q1 : Python filename extensions is/are</h1>
-                <label> <input type="checkbox">.py</label><br>
-                <label><input type="checkbox">.pyi</label><br>
-                <label><input type="checkbox"> .pyc and .pyd</label><br>
-                <label><input type="checkbox"> All the above</label><br>
+                <h1 class="quetions" id="quetion"></h1>
+                <div id="answers">
+                <label id="answer1"></label><br>
+                <label id="answer2"></label><br>
+                <label id="answer3"></label><br>
+                <label id="answer4"></label><br>
+                <div id="button"></div>
             </div>
-        </div>
-        <div class="maincontainer" id="python2">
-            <div class="qutionContainer">
+                <button id="NextQuiz" onclick="nextQuiz()">Next</button>
 
-                <h1 class="quetions">Q2 : Python is an</h1>
-                <label> <input type="checkbox" class="quetions"> interpreted, high-level, general-purpose programming
-                    language</label><br>
-                <label><input type="checkbox"> object-oriented programming language </label><br>
-                <label><input type="checkbox"> procedural, functional, structured, and reflective programming
-                    language</label><br>
-                <label><input type="checkbox"> All the above </label>
             </div>
-        </div>
 
-        <div class="maincontainer" id="python3">
-            <div class="qutionContainer">
-
-                <h1 class="quetions">Q3 :Python is designed by</h1>
-                <label> <input type="checkbox"> Guido van Rossum</label><br>
-                <label><input type="checkbox"> James Gosling </label><br>
-                <label><input type="checkbox"> Dennis Ritchie</label><br>
-                <label><input type="checkbox"> Google </label>
-            </div>
         </div>
-        <div class="maincontainer" id="python4">
-            <div class="qutionContainer">
+<div id="result-container">
+    <h1 >Total Quetions : 4</h1>
+<h1 id="correct">Correct Attempt :</h1>
+<h1 id="wrong">Wrong Attempt :</h1>
+<!-- <h1>Grade :</h1> -->
 
-                <h1 class="quetions">Q4 :Python first appeared in</h1>
-                <label> <input type="checkbox"> January 1982</label><br>
-                <label><input type="checkbox"> February 1991 </label><br>
-                <label><input type="checkbox"> December 1987</label><br>
-                <label><input type="checkbox"> July 2001 </label>
-            </div>
-        </div>
-        <button id="NExtQuiz">Next</button>
-    </div>
-    <script src="quiz-selection-paje.js"></script>
+</div>
+        <script src="quiz-selection-paje.js"></script>
 </body>
 
 </html>

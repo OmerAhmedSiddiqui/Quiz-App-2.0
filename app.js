@@ -19,6 +19,7 @@ signUp.style.visibility = "hidden"
 signIn.style.visibility = "visible"
 
 
+
 function openPopup() {
     popup.id = "open-popup"
     console.log(popup.className)
@@ -40,10 +41,10 @@ function passwordChkerForSignUp() {
 
 function passwordChkerForSignIn() {
     if (password.type === "password") {
-        password.type = "text"
+        passwordSignIn.type = "text"
     }
     else if (password.type === "text") {
-        password.type = "password"
+        passwordSignIn.type = "password"
     }
 
 }
@@ -62,6 +63,10 @@ function signup() {
     signIn.style.visibility = "hidden"
     mainBorder.style.height = "400px"
 
+    emailSignUp.value = ""
+    usernameSignUp.value = ""
+    passwordSignUp.value = ""
+    RepasswordSignUp.value = ""
 }
 
 function signin() {
@@ -74,7 +79,8 @@ function signin() {
     signIn.style.visibility = "visible"
     mainBorder.style.height = "300px"
 
-
+    emailSignIn.value = ""
+    passwordSignIn.value = ""
 }
 
 
@@ -91,7 +97,6 @@ function loginSignUp(parameter) {
         if (passwordSignUp.value === RepasswordSignUp.value) {
             var newuser = new Userdetails(emailSignUp.value,usernameSignUp.value, passwordSignUp.value)
             localStorage.setItem("userdetail", JSON.stringify(newuser))
-
             signin()
         }
         else {
@@ -104,12 +109,17 @@ function loginSignUp(parameter) {
     }
     else if (parameter === 'signin') { //signin
         var retriefItem = JSON.parse(localStorage.getItem('userdetail'));
-        // console.log(retriefItem,emailSignIn.value,passwordSignIn.value)
        if(retriefItem.email === emailSignIn.value && retriefItem.password === passwordSignIn.value){
-        // window.location("quizesChoices.html");
-      console.log(retriefItem.email,retriefItem.password)
+        // swal("Plz Sign Up");
+        location = "quizesChoices.html"
+
+       }
+       else{
+        swal("Your Account Doesn't Exist");
+
        }
     }
+
 
 
 
